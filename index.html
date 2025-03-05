@@ -50,6 +50,10 @@
             background: #333;
             color: white;
         }
+        .lang-btn {
+            background: #ffcc00;
+            color: black;
+        }
 
         /* Sections */
         section {
@@ -94,22 +98,25 @@
 
     <!-- Navbar -->
     <nav>
-        <h1>Aibar's Portfolio</h1>
+        <h1 id="title">Aibar's Portfolio</h1>
         <div class="buttons">
+            <button class="lang-btn" onclick="toggleLanguage()">Русский</button>
             <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
         </div>
     </nav>
 
     <!-- About Me -->
     <section>
-        <h2>About Me</h2>
-        <p>Hello, my name is Aibar. I am 17 years old and I study in the best school in Kazakhstan, Bilim Innovation Lyceum. I was born in Almaty and moved to Astana in 2011.</p>
+        <h2 id="about-title">About Me</h2>
+        <p id="about-text">
+            Hello, my name is Aibar. I am 17 years old and I study in the best school in Kazakhstan, Bilim Innovation Lyceum. I was born in Almaty and moved to Astana in 2011.
+        </p>
     </section>
 
     <!-- Achievements -->
     <section>
-        <h2>Achievements</h2>
-        <ul>
+        <h2 id="achievements-title">Achievements</h2>
+        <ul id="achievements-list">
             <li>MVP of League 2023/2024</li>
             <li>Jump 5x5 Third Place</li>
             <li>3x3 Tournament U16 First Place</li>
@@ -121,14 +128,39 @@
 
     <!-- Contact -->
     <section>
-        <h2>Contact</h2>
-        <p><strong>My Phone Number:</strong> +77056040282</p>
-        <p><strong>Email:</strong> aibarkasymzhan@gmail.com</p>
+        <h2 id="contact-title">Contact</h2>
+        <p><strong id="phone-label">My Phone Number:</strong> +77056040282</p>
+        <p><strong id="email-label">Email:</strong> aibarkasymzhan@gmail.com</p>
     </section>
 
     <script>
+        let isDarkMode = false;
+        let isRussian = false;
+
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
+            isDarkMode = !isDarkMode;
+        }
+
+        function toggleLanguage() {
+            isRussian = !isRussian;
+
+            document.getElementById("title").textContent = isRussian ? "Портфолио Айбара" : "Aibar's Portfolio";
+            document.getElementById("about-title").textContent = isRussian ? "Обо мне" : "About Me";
+            document.getElementById("about-text").textContent = isRussian 
+                ? "Привет, меня зовут Айбар. Мне 17 лет, и я учусь в лучшей школе Казахстана - БИЛ. Я родился в Алматы и переехал в Астану в 2011 году."
+                : "Hello, my name is Aibar. I am 17 years old and I study in the best school in Kazakhstan, Bilim Innovation Lyceum. I was born in Almaty and moved to Astana in 2011.";
+
+            document.getElementById("achievements-title").textContent = isRussian ? "Достижения" : "Achievements";
+            document.getElementById("achievements-list").innerHTML = isRussian 
+                ? "<li>MVP Лиги 2023/2024</li><li>Прыжок 5x5 Третье место</li><li>Турнир 3x3 U16 Первое место</li><li>Русский медвежонок Первое место</li><li>Марафон 5 км Первое место</li><li>Owlypia Третье место</li>"
+                : "<li>MVP of League 2023/2024</li><li>Jump 5x5 Third Place</li><li>3x3 Tournament U16 First Place</li><li>Русский медвежонок First Place</li><li>Marathon 5 km First Place</li><li>Owlypia Third Place</li>";
+
+            document.getElementById("contact-title").textContent = isRussian ? "Контакты" : "Contact";
+            document.getElementById("phone-label").textContent = isRussian ? "Мой номер телефона:" : "My Phone Number:";
+            document.getElementById("email-label").textContent = isRussian ? "Электронная почта:" : "Email:";
+
+            document.querySelector(".lang-btn").textContent = isRussian ? "English" : "Русский";
         }
     </script>
 
