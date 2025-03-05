@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aibar's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ADD8E6; /* Light Blue */
+            color: black;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        header {
+            background: #4682B4; /* Steel Blue */
+            color: white;
+            padding: 20px;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            color: black; /* Ensuring text remains black */
+        }
+        footer {
+            background: #4682B4;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .lang-btn {
+            background: #FFD700; /* Gold */
+        }
+        .dark-mode-btn {
+            background: #333;
+            color: white;
+        }
+        .dark-mode {
+            background-color: #222;
+        }
+        .dark-mode header, .dark-mode footer {
+            background: black;
+        }
+        .dark-mode section {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <h1 id="title">Aibar's Portfolio</h1>
+        <p id="subtitle">Student at BIL</p>
+    </header>
+
+    <section>
+        <h2 id="about-title">About Me</h2>
+        <p id="about-text">Hi, I'm Aibar! I'm a student at BIL, and I am passionate about learning and developing new skills.</p>
+    </section>
+
+    <section>
+        <h2 id="projects-title">Projects</h2>
+        <p id="projects-text">Here you can showcase your projects. (Add details about any projects you've worked on.)</p>
+    </section>
+
+    <section>
+        <h2 id="interests-title">My Interests</h2>
+        <p id="interests-text">I love playing basketball and football in my free time.</p>
+    </section>
+
+    <button class="lang-btn" onclick="switchLanguage()">Switch to Russian</button>
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+
+    <footer>
+        <p>&copy; 2025 Aibar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let isEnglish = true;
+        function switchLanguage() {
+            if (isEnglish) {
+                document.getElementById("title").innerText = "Портфолио Айбара";
+                document.getElementById("subtitle").innerText = "Студент в BIL";
+                document.getElementById("about-title").innerText = "Обо мне";
+                document.getElementById("about-text").innerText = "Привет, я Айбар! Я учусь в BIL и увлекаюсь обучением и развитием новых навыков.";
+                document.getElementById("projects-title").innerText = "Проекты";
+                document.getElementById("projects-text").innerText = "Здесь вы можете показать свои проекты. (Добавьте информацию о ваших проектах.)";
+                document.getElementById("interests-title").innerText = "Мои интересы";
+                document.getElementById("interests-text").innerText = "Я люблю играть в баскетбол и футбол в свободное время.";
+                document.querySelector(".lang-btn").innerText = "Переключить на английский";
+            } else {
+                document.getElementById("title").innerText = "Aibar's Portfolio";
+                document.getElementById("subtitle").innerText = "Student at BIL";
+                document.getElementById("about-title").innerText = "About Me";
+                document.getElementById("about-text").innerText = "Hi, I'm Aibar! I'm a student at BIL, and I am passionate about learning and developing new skills.";
+                document.getElementById("projects-title").innerText = "Projects";
+                document.getElementById("projects-text").innerText = "Here you can showcase your projects. (Add details about any projects you've worked on.)";
+                document.getElementById("interests-title").innerText = "My Interests";
+                document.getElementById("interests-text").innerText = "I love playing basketball and football in my free time.";
+                document.querySelector(".lang-btn").innerText = "Switch to Russian";
+            }
+            isEnglish = !isEnglish;
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
