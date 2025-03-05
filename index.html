@@ -5,128 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aibar's Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* General Styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #ADD8E6; /* Light Blue */
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f0f8ff; /* Light Blue */
             color: black;
+            transition: background 0.3s ease-in-out;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
             text-align: center;
-            transition: background 0.3s;
         }
-        header {
-            background: #4682B4; /* Steel Blue */
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0073e6;
             color: white;
-            padding: 20px;
+            padding: 15px 10%;
         }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            color: black; /* Ensuring text remains black */
+        nav h1 {
+            font-size: 24px;
         }
-        footer {
-            background: #4682B4;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
+        nav .buttons {
+            display: flex;
+            gap: 10px;
         }
-        button {
-            margin: 10px;
-            padding: 10px 15px;
-            font-size: 16px;
+        nav button {
+            padding: 8px 15px;
             border: none;
             cursor: pointer;
+            font-size: 14px;
             border-radius: 5px;
-        }
-        .lang-btn {
-            background: #FFD700; /* Gold */
         }
         .dark-mode-btn {
             background: #333;
             color: white;
         }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            background: white;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p, li {
+            font-size: 18px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+
+        /* Dark Mode */
         .dark-mode {
             background-color: #222;
-        }
-        .dark-mode header, .dark-mode footer {
-            background: black;
+            color: white;
         }
         .dark-mode section {
-            background: #444;
+            background: #333;
+            color: white;
+        }
+        .dark-mode nav {
+            background: black;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1 id="title">Aibar's Portfolio</h1>
-        <p id="subtitle">Student at BIL</p>
-    </header>
+    <!-- Navbar -->
+    <nav>
+        <h1>Aibar's Portfolio</h1>
+        <div class="buttons">
+            <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+    </nav>
 
+    <!-- About Me -->
     <section>
-        <h2 id="about-title">About Me</h2>
-        <p id="about-text">Hi, I'm Aibar! I'm a student at BIL, and I am passionate about learning and developing new skills.</p>
+        <h2>About Me</h2>
+        <p>Hello, my name is Aibar. I am 17 years old and I study in the best school in Kazakhstan, Bilim Innovation Lyceum. I was born in Almaty and moved to Astana in 2011.</p>
     </section>
 
+    <!-- Achievements -->
     <section>
-        <h2 id="achievements-title">Achievements</h2>
-        <ul id="achievements-list">
+        <h2>Achievements</h2>
+        <ul>
             <li>MVP of League 2023/2024</li>
             <li>Jump 5x5 Third Place</li>
             <li>3x3 Tournament U16 First Place</li>
+            <li>Русский медвежонок First Place</li>
+            <li>Marathon 5 km First Place</li>
+            <li>Owlypia Third Place</li>
         </ul>
     </section>
 
+    <!-- Contact -->
     <section>
-        <h2 id="interests-title">My Interests</h2>
-        <p id="interests-text">I love playing basketball and football in my free time.</p>
+        <h2>Contact</h2>
+        <p><strong>My Phone Number:</strong> +77056040282</p>
+        <p><strong>Email:</strong> aibarkasymzhan@gmail.com</p>
     </section>
 
-    <button class="lang-btn" onclick="switchLanguage()">Switch to Russian</button>
-    <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
-
-    <footer>
-        <p>&copy; 2025 Aibar. All rights reserved.</p>
-    </footer>
-
     <script>
-        let isEnglish = true;
-        function switchLanguage() {
-            if (isEnglish) {
-                document.getElementById("title").innerText = "Портфолио Айбара";
-                document.getElementById("subtitle").innerText = "Студент в BIL";
-                document.getElementById("about-title").innerText = "Обо мне";
-                document.getElementById("about-text").innerText = "Привет, я Айбар! Я учусь в BIL и увлекаюсь обучением и развитием новых навыков.";
-                document.getElementById("achievements-title").innerText = "Достижения";
-                document.getElementById("achievements-list").innerHTML = `
-                    <li>Самый ценный игрок (MVP) лиги 2023/2024</li>
-                    <li>Прыжок 5x5 третье место</li>
-                    <li>Турнир 3x3 U16 первое место</li>
-                `;
-                document.getElementById("interests-title").innerText = "Мои интересы";
-                document.getElementById("interests-text").innerText = "Я люблю играть в баскетбол и футбол в свободное время.";
-                document.querySelector(".lang-btn").innerText = "Переключить на английский";
-            } else {
-                document.getElementById("title").innerText = "Aibar's Portfolio";
-                document.getElementById("subtitle").innerText = "Student at BIL";
-                document.getElementById("about-title").innerText = "About Me";
-                document.getElementById("about-text").innerText = "Hi, I'm Aibar! I'm a student at BIL, and I am passionate about learning and developing new skills.";
-                document.getElementById("achievements-title").innerText = "Achievements";
-                document.getElementById("achievements-list").innerHTML = `
-                    <li>MVP of League 2023/2024</li>
-                    <li>Jump 5x5 Third Place</li>
-                    <li>3x3 Tournament U16 First Place</li>
-                `;
-                document.getElementById("interests-title").innerText = "My Interests";
-                document.getElementById("interests-text").innerText = "I love playing basketball and football in my free time.";
-                document.querySelector(".lang-btn").innerText = "Switch to Russian";
-            }
-            isEnglish = !isEnglish;
-        }
-
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
         }
