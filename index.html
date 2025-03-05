@@ -72,8 +72,12 @@
     </section>
 
     <section>
-        <h2 id="projects-title">Projects</h2>
-        <p id="projects-text">Here you can showcase your projects. (Add details about any projects you've worked on.)</p>
+        <h2 id="achievements-title">Achievements</h2>
+        <ul id="achievements-list">
+            <li>MVP of League 2023/2024</li>
+            <li>Jump 5x5 Third Place</li>
+            <li>3x3 Tournament U16 First Place</li>
+        </ul>
     </section>
 
     <section>
@@ -96,8 +100,12 @@
                 document.getElementById("subtitle").innerText = "Студент в BIL";
                 document.getElementById("about-title").innerText = "Обо мне";
                 document.getElementById("about-text").innerText = "Привет, я Айбар! Я учусь в BIL и увлекаюсь обучением и развитием новых навыков.";
-                document.getElementById("projects-title").innerText = "Проекты";
-                document.getElementById("projects-text").innerText = "Здесь вы можете показать свои проекты. (Добавьте информацию о ваших проектах.)";
+                document.getElementById("achievements-title").innerText = "Достижения";
+                document.getElementById("achievements-list").innerHTML = `
+                    <li>Самый ценный игрок (MVP) лиги 2023/2024</li>
+                    <li>Прыжок 5x5 третье место</li>
+                    <li>Турнир 3x3 U16 первое место</li>
+                `;
                 document.getElementById("interests-title").innerText = "Мои интересы";
                 document.getElementById("interests-text").innerText = "Я люблю играть в баскетбол и футбол в свободное время.";
                 document.querySelector(".lang-btn").innerText = "Переключить на английский";
@@ -106,8 +114,12 @@
                 document.getElementById("subtitle").innerText = "Student at BIL";
                 document.getElementById("about-title").innerText = "About Me";
                 document.getElementById("about-text").innerText = "Hi, I'm Aibar! I'm a student at BIL, and I am passionate about learning and developing new skills.";
-                document.getElementById("projects-title").innerText = "Projects";
-                document.getElementById("projects-text").innerText = "Here you can showcase your projects. (Add details about any projects you've worked on.)";
+                document.getElementById("achievements-title").innerText = "Achievements";
+                document.getElementById("achievements-list").innerHTML = `
+                    <li>MVP of League 2023/2024</li>
+                    <li>Jump 5x5 Third Place</li>
+                    <li>3x3 Tournament U16 First Place</li>
+                `;
                 document.getElementById("interests-title").innerText = "My Interests";
                 document.getElementById("interests-text").innerText = "I love playing basketball and football in my free time.";
                 document.querySelector(".lang-btn").innerText = "Switch to Russian";
